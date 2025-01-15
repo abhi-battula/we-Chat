@@ -11,7 +11,7 @@ const io = require('socket.io')(4000, {
     }
 });
 
-
+//full changes done 
 const users={};
 console.log("hello******************");
 
@@ -25,15 +25,20 @@ io.on('connection',Socket=>{
         users[Socket.id]=name;
         console.log("*****************");
         console.log(users);
-        Socket.emit('display-user', name);
+        Socket.broadcast.emit('display-user', name);
         console.log(name);
         
         console.log(`----------${name}`);
+        Socket.emit('checking');
         
+    })
+
+    Socket.on('send',msg=>{
+        Socket.broadcast.emit('recieve',{message:msg,name: users[Socket.id]})
     })
 
 
     console.log("checking-----");
-    Socket.broadcast.emit('checking');
+    
     
 })
