@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We-Chat</title>
+    <!-- this is veery imp, this src is connecting client with our node server -->
+     <!-- so now client and server got connecte, so we can pass data between client and servre i.e frontend & backend -->
+    <script defer src="http://localhost:4000/socket.io/socket.io.js"></script> 
+    <script defer src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <img src="../images/download.png" alt="">
+        <div>We-Chat App</div>
+    </nav>
+    <div class="container">
+        <div class="message left">Abhi: Hey How are you ?</div>
+        <div class="message right">Vinay: I am good.</div>
+
+       
+    </div>
+    <div class="send">
+        <form action="#" id="form-container">
+            <input type="text" placeholder="Enter your message" id="mymsg" name="mymsg">
+        </form>
+        <button class="btn" type="submit">send</button>
+    </div>
+</body>
+</html>
